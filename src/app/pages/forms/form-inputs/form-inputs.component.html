@@ -1,0 +1,71 @@
+<nb-card>
+  <p *ngIf="showSuccess" style="padding-left:10px;color:greenyellow;font-size:large;font-weight:900">Step-1 Initiation has been done Successfully</p>
+  <nb-card-header>Step-1 Initiation</nb-card-header>
+  <nb-card-body>
+    <form #newUserForm="ngForm" (ngSubmit)="stepinitiation(newUserForm)">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">ADVERTISER ID</label>
+          <input type="text" autocomplete="off" class="form-control" autocomplete="off" id="member" [(ngModel)]="adid" name="adid" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">AD MODE</label>
+          <select class="form-control" id="sel1" required>
+            <option>CPC</option>
+            <option>CPM</option>
+            <option>CPD</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">SOURCE AD ACCOUNT</label>
+          <input type="text" autocomplete="off" class="form-control" autocomplete="off" id="" [(ngModel)]="sad" name="sad">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">DESTINATION AD ACCOUNT</label>
+          <input type="text" autocomplete="off" class="form-control" autocomplete="off" id="" [(ngModel)]="dad" name="dad">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">CURRENCY FOR AD</label>
+          <select class="form-control" id="sel1">
+            <option>INR</option>
+            <option>USD</option>
+            <option>EUR</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">AD PRICE</label>
+          <input type="text" autocomplete="off" class="form-control" autocomplete="off" id="inputPassword4" [(ngModel)]="adprice" name="adprice">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">ORDER ID</label>
+          <input type="text" autocomplete="off" class="form-control" autocomplete="off" id="" [(ngModel)]="orderid" name="orderid">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">AD REFERENCE 1</label>
+          <input type="text" class="form-control" autocomplete="off" id="inputPassword4" [(ngModel)]="ref1" name="ref1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">AD REFERENCE 2</label>
+          <input type="text" class="form-control" autocomplete="off" id="" [(ngModel)]="ref2" name="ref2">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">REMARKS</label>
+          <input type="text" class="form-control" autocomplete="off" id="inputPassword4" [(ngModel)]="rem" name="rem">
+        </div>
+      </div>
+      <button type="submit" [disabled]="!newUserForm.form.valid" nbButton>Submit</button>
+    </form>
+  </nb-card-body>
+</nb-card>
